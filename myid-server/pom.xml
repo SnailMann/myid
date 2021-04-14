@@ -44,12 +44,16 @@
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>guava</artifactId>
         </dependency>
-        <!--monitor-->
+        <!--prometheus-->
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
-
+        <!--snailmann-->
+        <dependency>
+            <groupId>com.snailmann.myid.common</groupId>
+            <artifactId>myid-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

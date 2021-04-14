@@ -78,6 +78,12 @@
                 <artifactId>util</artifactId>
                 <version>0.1.28</version>
             </dependency>
+            <!--snailmann-->
+            <dependency>
+                <groupId>com.snailmann.myid.common</groupId>
+                <artifactId>myid-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

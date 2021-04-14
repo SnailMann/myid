@@ -1,9 +1,21 @@
-# Getting Started
+## myid
+Global unique ID service based on mysql (number segment)
 
-### Reference Documentation
-For further reference, please consider the following sections:
+### modules
+|modules| description|remark|
+| --- | --- | --- |
+|myid-client| client ||
+|myid-server| server ||
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.4/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.4/maven-plugin/reference/html/#build-image)
 
+### how to start ? 
+- deploying myid-server
+- user myid-client or request HTTP interface
+                  
+                  
+### reference
+
+- [Leaf - @meituan](https://tech.meituan.com/2019/03/07/open-source-project-leaf.html)
+- [didi/tinyid - @didi](https://github.com/didi/tinyid)    
+
+  

@@ -12,7 +12,6 @@
     <name>myid-client</name>
 
     <dependencies>
-        <!--spring-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -28,7 +27,6 @@
             <artifactId>spring-web</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!--tools-->
         <dependency>
             <groupId>com.facebook.jcommon</groupId>
             <artifactId>util</artifactId>

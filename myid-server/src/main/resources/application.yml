@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: myid-server
+  profiles:
+    active: ${env:dev}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
