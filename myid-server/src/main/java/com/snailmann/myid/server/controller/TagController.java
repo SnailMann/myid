@@ -17,7 +17,7 @@ import java.util.Objects;
  */
 @Slf4j
 @RestController
-@RequestMapping("/ms-id-server/v1/tags")
+@RequestMapping("/myid-server/v1/tags")
 public class TagController {
 
     private static final int STEP_MIN = 100;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("/ms-id-server/v1/segments")
+@RequestMapping("/myid-server/v1/segments")
 public class SegmentController {
 
     private final SegmentService segmentService;
