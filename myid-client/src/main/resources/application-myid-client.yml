@@ -1,7 +1,7 @@
 myid:
   server:
     proxy:
-      base-url: http://localhost:8080/
+      base-url: http://localhost:8080/myid-server/
       connection-timeout: 1000
       read-timeout: 1000
       httpclient:
