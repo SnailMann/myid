@@ -30,8 +30,8 @@ public class TagServiceImpl implements TagService {
     @Override
     public synchronized void register(String tag, long sid, int step) {
         IDGen gen = idGenService.get(tag);
-        if (Objects.isNull(gen)) {
-            throw new TagNoRegisterException(String.format("tag no register, tag: %s", tag));
+        if (!Objects.isNull(gen)) {
+            throw new TagNoRegisterException(String.format("tag has been register, tag: %s", tag));
         }
         gen = IDGen.builder()
                 .tag(tag)
