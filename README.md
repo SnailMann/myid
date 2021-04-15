@@ -11,6 +11,11 @@ Global unique ID service based on mysql (number segment)
 ### how to start ? 
 - deploying myid-server
 - user myid-client or request HTTP interface
+
+### preference
+- the throughput of single machine (4C8G spot) is 10 k/s
+
+
                   
                   
 ### reference
