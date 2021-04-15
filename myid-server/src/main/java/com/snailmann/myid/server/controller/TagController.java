@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Objects;
 
 /**
+ * register interface
+ *
  * @author liwenjie
  */
 @Slf4j

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * [admin interface] check segment for admin
+ *
  * @author liwenjie
  */
 @Slf4j

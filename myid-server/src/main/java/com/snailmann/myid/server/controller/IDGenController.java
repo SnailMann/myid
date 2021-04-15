@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 /**
+ * for local client
+ *
  * @author liwenjie
  */
 @Slf4j

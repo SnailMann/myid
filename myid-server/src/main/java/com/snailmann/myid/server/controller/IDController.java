@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ * generate id
+ *
  * @author liwenjie
  */
 @Slf4j
@@ -28,11 +30,24 @@ public class IDController {
         this.idService = idService;
     }
 
+    /**
+     * generate single id
+     *
+     * @param tag tag
+     * @return id
+     */
     @GetMapping
     public Long next(@RequestParam String tag) {
         return idService.next(tag);
     }
 
+    /**
+     * batch generate id
+     *
+     * @param batchSize id size of you want generate
+     * @param tag       tag
+     * @return collection
+     */
     @GetMapping("/batch")
     public List<Long> batchNext(
             @RequestParam(required = false, defaultValue = "1") int batchSize,
