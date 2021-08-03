@@ -1,5 +1,6 @@
 ## myid
 Global unique ID service based on mysql (number segment)
+- [如何实现一个高性能的全局唯一 ID 生成服务](https://blog.csdn.net/SnailMann/article/details/113357180)
 
 ### modules
 |modules| description|remark|
