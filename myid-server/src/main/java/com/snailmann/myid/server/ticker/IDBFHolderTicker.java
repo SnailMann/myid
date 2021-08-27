@@ -1,4 +1,4 @@
-package com.snailmann.myid.server.schedule;
+package com.snailmann.myid.server.ticker;
 
 import com.snailmann.myid.common.thread.KillableIntervalThread;
 import com.snailmann.myid.server.service.IDBFHolderService;
@@ -15,18 +15,17 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Component
-public class IDBFHolderSchedule implements ApplicationListener<ApplicationReadyEvent> {
+public class IDBFHolderTicker implements ApplicationListener<ApplicationReadyEvent> {
 
     private final IDBFHolderService idbfHolderService;
 
-    private boolean isInit = false;
+    private volatile boolean initialized = false;
 
-    public IDBFHolderSchedule(IDBFHolderService idbfHolderService) {
+    public IDBFHolderTicker(IDBFHolderService idbfHolderService) {
         this.idbfHolderService = idbfHolderService;
     }
 
-    public void schedule() {
-        log.info("start schedule refresh holder");
+    public void run() {
         idbfHolderService.refresh();
     }
 
@@ -34,18 +33,17 @@ public class IDBFHolderSchedule implements ApplicationListener<ApplicationReadyE
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         // avoid multiple ready
-        if (isInit) {
+        if (initialized) {
             return;
         }
-
-        log.info("first time refresh holder ");
-        isInit = true;
+        initialized = true;
         idbfHolderService.refresh();
+        log.info("refreshing holder");
 
-        // start schedule after x minute
+        // start ticker after x second
         TimeUnit.SECONDS.sleep(60);
         TaskThread taskThread = new TaskThread();
-        taskThread.setName("holder-refresh-thread-");
+        taskThread.setName("holder-");
         taskThread.start();
     }
 
@@ -59,7 +57,7 @@ public class IDBFHolderSchedule implements ApplicationListener<ApplicationReadyE
 
         @Override
         protected void doWork() {
-            schedule();
+            IDBFHolderTicker.this.run();
         }
 
     }
