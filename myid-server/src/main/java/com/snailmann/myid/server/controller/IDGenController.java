@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 @Slf4j
 @RestController
-@RequestMapping("/myid-server/v1/id-gens")
+@RequestMapping("/myid-server/v1/gens")
 public class IDGenController {
 
     private final IDGenService idGenService;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Objects;
 
 /**
- * register interface
+ * register api
  *
  * @author liwenjie
  */
@@ -34,6 +34,14 @@ public class TagController {
         this.idGenService = idGenService;
     }
 
+    /**
+     * Register an ID line
+     *
+     * @param tag  business tag
+     * @param sid  start id
+     * @param step step
+     * @return {@code success} register success
+     */
     @PostMapping("/register")
     public String register(
             @RequestParam String tag,
@@ -44,7 +52,14 @@ public class TagController {
         return "success";
     }
 
-    @PostMapping("un-register")
+    /**
+     * Un-register an ID line
+     *
+     * @param tag    business tag
+     * @param editor who triggered the operation
+     * @return {@code success} un-register success
+     */
+    @PostMapping("/un-register")
     public String unregister(
             @RequestParam String tag,
             @RequestParam String editor) {
@@ -56,7 +71,6 @@ public class TagController {
     }
 
     private void check(String tag, long sid, int step) {
-
         if (StringUtils.isBlank(tag)) {
             throw new IllegalArgumentException("tag is blank");
         }

@@ -32,8 +32,7 @@ public class IDBFHolderServiceImpl implements IDBFHolderService {
 
     private final IDBFFactory idbfFactory;
 
-    public IDBFHolderServiceImpl(IDGenService idGenService,
-                                 IDBFFactory idbfFactory) {
+    public IDBFHolderServiceImpl(IDGenService idGenService, IDBFFactory idbfFactory) {
         this.idGenService = idGenService;
         this.idbfFactory = idbfFactory;
     }
@@ -43,7 +42,6 @@ public class IDBFHolderServiceImpl implements IDBFHolderService {
      */
     @Override
     public void refresh() {
-        log.info("refresh buffer holder");
         List<IDGen> gens = idGenService.list();
         List<String> tags = gens.stream().map(IDGen::getTag)
                 .filter(Objects::nonNull).distinct()
