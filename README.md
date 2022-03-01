@@ -9,9 +9,12 @@ Global unique ID service based on mysql (number segment)
 |myid-server| server ||
 
 
-### how to start ? 
+### how to start ?
+myid is very simple to use，follow these steps:
+
+- update the address of the database in YML
 - deploying myid-server
-- user myid-client or request HTTP interface
+- use myid-client or request HTTP interface to generate id
 
 ### preference
 - the throughput of single machine (4C8G spot) is 10 k/s

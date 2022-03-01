@@ -113,6 +113,7 @@ public class IDBuffer {
                         .build();
             } else {
                 // id resources are exhausted
+                // because the segment will be overwritten here, there is no thread safety problem
                 segment.setReady(false);
             }
         }
